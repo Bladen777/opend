@@ -1,0 +1,17 @@
+type Currency = 
+ record {
+   name: text;
+   symbol: text;
+ };
+service : {
+  complete_purchase: (principal, principal, principal) -> (text);
+  get_currency_info: () -> (Currency) query;
+  get_listed_NFTs: () -> (vec principal) query;
+  get_listed_price: (principal) -> (nat) query;
+  get_opend_canister_id: () -> (principal) query;
+  get_original_owner: (principal) -> (principal) query;
+  get_owned_NFTs: (principal) -> (vec principal) query;
+  is_listed: (principal) -> (bool) query;
+  list_item: (principal, nat) -> (text);
+  mint: (vec nat8, text) -> (principal);
+}

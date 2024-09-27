@@ -1,0 +1,14 @@
+type Currency = 
+ record {
+   name: text;
+   symbol: text;
+ };
+service : {
+  balance_of: (principal) -> (nat) query;
+  get_currency_info: () -> (Currency) query;
+  get_current_user: () -> (principal) query;
+  get_faucet_amount: () -> (nat) query;
+  pay_out: () -> (text);
+  transfer: (principal, nat) -> (text);
+  user_principal: () -> (principal);
+}
